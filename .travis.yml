@@ -12,6 +12,7 @@ before_script:
 - export GOPATH=/home/travis/build/Prajyot-Parab/
 - export GOROOT=/usr/local/go
 - mkdir -p $GOPATH/src/github.com/jenkins-x
+- ls
 - cd $GOPATH
 - ls
 - mv jx $GOPATH/src/github.com/jenkins-x/
