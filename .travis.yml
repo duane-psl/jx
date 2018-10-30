@@ -11,7 +11,7 @@ before_script:
 - chmod ugo+r go1.10.1.linux-ppc64le.tar.gz
 - sudo tar -C /usr/local -xzf go1.10.1.linux-ppc64le.tar.gz
 - export PATH=/usr/local/go/bin:$PATH
-- export GOPATH=/home/travis/build/Prajyot-Parab/
+- export GOPATH=/home/travis/build/duane-psl/
 - export GOROOT=/usr/local/go
 - mkdir -p $GOPATH/src/github.com/jenkins-x
 - ls
