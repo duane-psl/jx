@@ -13,6 +13,7 @@ before_script:
 - export GOROOT=/usr/local/go
 - mkdir -p $GOPATH/src/github.com/jenkins-x
 - cd $GOPATH
+- ls
 - mv jx $GOPATH/src/github.com/jenkins-x/
 - mkdir -p $GOPATH/bin
 - sudo curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
