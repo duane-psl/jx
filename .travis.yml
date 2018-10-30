@@ -5,6 +5,8 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install -y wget tar gcc git make curl
 before_script:
+- pwd
+- ls
 - wget https://storage.googleapis.com/golang/go1.10.1.linux-ppc64le.tar.gz
 - chmod ugo+r go1.10.1.linux-ppc64le.tar.gz
 - sudo tar -C /usr/local -xzf go1.10.1.linux-ppc64le.tar.gz
@@ -13,6 +15,7 @@ before_script:
 - export GOROOT=/usr/local/go
 - mkdir -p $GOPATH/src/github.com/jenkins-x
 - ls
+- pwd
 - cd $GOPATH
 - ls
 - mv jx $GOPATH/src/github.com/jenkins-x/
