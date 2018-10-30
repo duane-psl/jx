@@ -23,4 +23,4 @@ script:
 - make build
 - make test
 after_failure:
-- echo "Job Failed"
+- echo "Job Failed lol"
