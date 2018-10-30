@@ -1,0 +1,26 @@
+language: bash
+sudo: false
+os: linux-ppc64le
+before_install:
+- sudo apt-get update
+- sudo apt-get install -y wget tar gcc git make curl
+before_script:
+- wget https://storage.googleapis.com/golang/go1.10.1.linux-ppc64le.tar.gz
+- chmod ugo+r go1.10.1.linux-ppc64le.tar.gz
+- sudo tar -C /usr/local -xzf go1.10.1.linux-ppc64le.tar.gz
+- export PATH=/usr/local/go/bin:$PATH
+- export GOPATH=/home/travis/build/Prajyot-Parab/
+- export GOROOT=/usr/local/go
+- mkdir -p $GOPATH/src/github.com/jenkins-x
+- cd $GOPATH
+- mv jx $GOPATH/src/github.com/jenkins-x/
+- mkdir -p $GOPATH/bin
+- sudo curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+- cd $GOPATH/src/github.com/jenkins-x/jx
+- go env
+script: 
+- go version
+- make build
+- make test
+after_failure:
+- echo "Job Failed"
